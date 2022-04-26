@@ -4,10 +4,10 @@
 
 #include <stdlib.h>
 
-struct TreeNode {
+struct treeNode {
     int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct treeNode *left;
+    struct treeNode *right;
 };
 
 int numTrees(int n) {
@@ -28,22 +28,22 @@ int numTrees(int n) {
     return cons[n];
 }
 
-struct TreeNode** __generateTrees(int n, int* returnSize, int lo) {
+struct treeNode** __generateTrees(int n, int* returnSize, int lo) {
     int left_size;
     int right_size;
-    struct TreeNode **left;
-    struct TreeNode **right;
-    struct TreeNode **ret;
+    struct treeNode **left;
+    struct treeNode **right;
+    struct treeNode **ret;
     int r = 0;
 
     if (n == 0) {
         *returnSize = 1;
-        ret = calloc(sizeof(struct TreeNode *) * 1, 1);
+        ret = calloc(sizeof(struct treeNode *) * 1, 1);
         ret[0] = NULL;
         return ret;
     } else {
         *returnSize = numTrees(n);
-        ret = calloc(sizeof(struct TreeNode *) * (*returnSize), 1);
+        ret = calloc(sizeof(struct treeNode *) * (*returnSize), 1);
     }
 
     for (int i = 0; i < n; ++i) {
@@ -52,7 +52,7 @@ struct TreeNode** __generateTrees(int n, int* returnSize, int lo) {
 
         for (int j = 0; j < left_size; ++j) {
             for (int k = 0; k < right_size; ++k) {
-                struct TreeNode *new = calloc(sizeof(struct TreeNode), 1);
+                struct treeNode *new = calloc(sizeof(struct treeNode), 1);
                 new->val = lo + i;
                 new->left = left[j];
                 new->right = right[k];
@@ -65,7 +65,7 @@ struct TreeNode** __generateTrees(int n, int* returnSize, int lo) {
     return ret;
 }
 
-struct TreeNode** generateTrees(int n, int* returnSize)
+struct treeNode** generateTrees(int n, int* returnSize)
 {
     return __generateTrees(n, returnSize, 1);
 }
@@ -73,7 +73,7 @@ struct TreeNode** generateTrees(int n, int* returnSize)
 int main(void)
 {
     int size;
-    struct TreeNode **ret = generateTrees(3, &size);
+    struct treeNode **ret = generateTrees(3, &size);
 
     return 0;
 }

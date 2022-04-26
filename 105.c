@@ -4,18 +4,18 @@
 
 #include <stdio.h>
 
-struct TreeNode {
+struct treeNode {
     int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct treeNode *left;
+    struct treeNode *right;
 };
 
 /* 分而治之 */
 
-struct TreeNode nodes[3000];
+struct treeNode nodes[3000];
 int nodeIdx = 0;
 
-static void __buildTree(struct TreeNode** root, int* preorder, int preorderSize, int* inorder, int inorderSize)
+static void __buildTree(struct treeNode** root, int* preorder, int preorderSize, int* inorder, int inorderSize)
 {
     int pre, i;
 
@@ -43,8 +43,8 @@ static void __buildTree(struct TreeNode** root, int* preorder, int preorderSize,
 
 }
 
-struct TreeNode* buildTree(int* preorder, int preorderSize, int* inorder, int inorderSize){
-    struct TreeNode *root = NULL;
+struct treeNode* buildTree(int* preorder, int preorderSize, int* inorder, int inorderSize){
+    struct treeNode *root = NULL;
 
     nodeIdx = 0;
     __buildTree(&root, preorder, preorderSize, inorder, inorderSize);

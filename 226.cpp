@@ -3,21 +3,21 @@
 //
 
 
-struct TreeNode {
+struct treeNode {
     int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct treeNode *left;
+    struct treeNode *right;
 };
 
 
 #include <stdio.h>
 
-struct TreeNode* invertTree(struct TreeNode* root) {
+struct treeNode* invertTree(struct treeNode* root) {
     if (!root)
         return NULL;
 
-    struct TreeNode *left = root->left;
-    struct TreeNode *right = root->right;
+    struct treeNode *left = root->left;
+    struct treeNode *right = root->right;
     root->left = right;
     root->right = left;
     invertTree(left);

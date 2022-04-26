@@ -10,19 +10,19 @@
  * 2. rm->right == curr, rm->right == NULL
  * */
 
-struct TreeNode {
+struct treeNode {
     int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct treeNode *left;
+    struct treeNode *right;
 };
 
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
-int* inorderTraversal(struct TreeNode* root, int* returnSize) {
+int* inorderTraversal(struct treeNode* root, int* returnSize) {
     int *ret = NULL;
     int r_size = 0;
-    struct TreeNode *curr = NULL, *rm = NULL;
+    struct treeNode *curr = NULL, *rm = NULL;
 
 
     *returnSize = 0;
@@ -62,9 +62,9 @@ int* inorderTraversal(struct TreeNode* root, int* returnSize) {
     return ret;
 }
 
-struct TreeNode node3 = {3, NULL, NULL};
-struct TreeNode node2 = {2, &node3, NULL};
-struct TreeNode node1 = {1, NULL, &node2};
+struct treeNode node3 = {3, NULL, NULL};
+struct treeNode node2 = {2, &node3, NULL};
+struct treeNode node1 = {1, NULL, &node2};
 
 int main(void)
 {

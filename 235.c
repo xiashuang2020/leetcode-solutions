@@ -2,17 +2,17 @@
 // Created by pyxisha on 2022/4/14.
 //
 
-struct TreeNode {
+struct treeNode {
     int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct treeNode *left;
+    struct treeNode *right;
 };
 
 #include <stdio.h>
 
-struct TreeNode* lowestCommonAncestor(struct TreeNode* root, struct TreeNode* p, struct TreeNode* q) {
-    struct TreeNode *curr = root;
-    struct TreeNode *next1, *next2;
+struct treeNode* lowestCommonAncestor(struct treeNode* root, struct treeNode* p, struct treeNode* q) {
+    struct treeNode *curr = root;
+    struct treeNode *next1, *next2;
 
     while (curr) {
         if (p->val < curr->val) {

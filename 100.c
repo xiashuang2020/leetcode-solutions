@@ -5,13 +5,13 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-struct TreeNode {
+struct treeNode {
     int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct treeNode *left;
+    struct treeNode *right;
 };
 
-static bool treeNodeEqual(struct TreeNode* node1, struct TreeNode* node2)
+static bool treeNodeEqual(struct treeNode* node1, struct treeNode* node2)
 {
     if (node1->val != node2->val)
         return false;
@@ -31,11 +31,11 @@ static bool treeNodeEqual(struct TreeNode* node1, struct TreeNode* node2)
     return true;
 }
 
-bool isSameTree(struct TreeNode* p, struct TreeNode* q) {
-    struct TreeNode *Q1[100] = {0};
-    struct TreeNode *Q2[100] = {0};
+bool isSameTree(struct treeNode* p, struct treeNode* q) {
+    struct treeNode *Q1[100] = {0};
+    struct treeNode *Q2[100] = {0};
     int qs = 0,  qe = 0;
-    struct TreeNode *t1 = NULL, *t2 = NULL;
+    struct treeNode *t1 = NULL, *t2 = NULL;
 
     if (p == NULL && q == NULL)
         return true;

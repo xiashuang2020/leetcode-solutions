@@ -2,13 +2,13 @@
 // Created by pyxisha on 2022/4/10.
 //
 
-struct TreeNode {
+struct treeNode {
     int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct treeNode *left;
+    struct treeNode *right;
 };
 
-static inline int height(struct TreeNode* root) {
+static inline int height(struct treeNode* root) {
     int ret = 0;
 
     while (root) {
@@ -19,9 +19,9 @@ static inline int height(struct TreeNode* root) {
     return ret;
 }
 
-int countNodes(struct TreeNode* root) {
+int countNodes(struct treeNode* root) {
     int depth = 0;
-    struct TreeNode * curr = root;
+    struct treeNode * curr = root;
     int ret = 0;
     depth = height(root);
 

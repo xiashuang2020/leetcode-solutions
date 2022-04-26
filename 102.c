@@ -10,15 +10,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct TreeNode {
+struct treeNode {
     int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct treeNode *left;
+    struct treeNode *right;
 };
 
-int** levelOrder(struct TreeNode* root, int* returnSize, int** returnColumnSizes) {
+int** levelOrder(struct treeNode* root, int* returnSize, int** returnColumnSizes) {
     int **level;
-    struct TreeNode **currQ = NULL, **nextQ = NULL, *curr = NULL, **tmp;
+    struct treeNode **currQ = NULL, **nextQ = NULL, *curr = NULL, **tmp;
     int currQi = 0, currQe = 0, nextQe = 0, leveli = 0;
     int level_num = 0;
 
@@ -28,8 +28,8 @@ int** levelOrder(struct TreeNode* root, int* returnSize, int** returnColumnSizes
     }
 
     level = calloc(2000 * sizeof(int *), 1);
-    currQ = calloc(2000 * sizeof(struct TreeNode *), 1);
-    nextQ = calloc(2000 * sizeof(struct TreeNode *), 1);
+    currQ = calloc(2000 * sizeof(struct treeNode *), 1);
+    nextQ = calloc(2000 * sizeof(struct treeNode *), 1);
     *returnColumnSizes = calloc(2000 * sizeof(int), 1);
 
     currQ[currQe++] = root;

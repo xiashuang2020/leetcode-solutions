@@ -9,18 +9,18 @@
 
 using namespace std;
 
-struct TreeNode {
+struct treeNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+    treeNode *left;
+    treeNode *right;
+    treeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
 class Solution {
 public:
-    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        vector<TreeNode*> path1;
-        vector<TreeNode*> path2;
+    treeNode* lowestCommonAncestor(treeNode* root, treeNode* p, treeNode* q) {
+        vector<treeNode*> path1;
+        vector<treeNode*> path2;
 
         search(root, p, path1);
         search(root, q, path2);
@@ -37,7 +37,7 @@ public:
     }
 
 private:
-    bool search(TreeNode *root, TreeNode *node, vector<TreeNode*> &ret) {
+    bool search(treeNode *root, treeNode *node, vector<treeNode*> &ret) {
         if (!root)
             return false;
 
@@ -56,9 +56,9 @@ private:
 
 int main(void)
 {
-    TreeNode node3(3);
-    TreeNode node2(2);
-    TreeNode node1(1);
+    treeNode node3(3);
+    treeNode node2(2);
+    treeNode node1(1);
     node1.left = &node2;
     node1.right = &node3;
     Solution solution;

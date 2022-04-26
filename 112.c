@@ -6,10 +6,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct TreeNode {
+struct treeNode {
     int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct treeNode *left;
+    struct treeNode *right;
 };
 
 /* 非递归实现深度优先搜索 */
@@ -18,12 +18,12 @@ struct TreeNode {
 #define RIGHT 1
 
 struct pair {
-    struct TreeNode *node;
+    struct treeNode *node;
     int path;
 };
 
-bool hasPathSum(struct TreeNode* root, int targetSum) {
-    struct TreeNode *curr;
+bool hasPathSum(struct treeNode* root, int targetSum) {
+    struct treeNode *curr;
     int sum = 0;
     struct pair *list;
     int idx = -1;
@@ -68,11 +68,11 @@ bool hasPathSum(struct TreeNode* root, int targetSum) {
     return false;
 }
 
-struct TreeNode node5 = {2, NULL, NULL};
-struct TreeNode node4 = {7, NULL, NULL};
-struct TreeNode node3 = {11, &node4, &node5};
-struct TreeNode node2 = {4, &node3, NULL};
-struct TreeNode node1 = {5, &node2, NULL};
+struct treeNode node5 = {2, NULL, NULL};
+struct treeNode node4 = {7, NULL, NULL};
+struct treeNode node3 = {11, &node4, &node5};
+struct treeNode node2 = {4, &node3, NULL};
+struct treeNode node1 = {5, &node2, NULL};
 
 int main(void)
 {

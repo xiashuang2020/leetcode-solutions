@@ -4,20 +4,20 @@
 
 #include <vector>
 
-struct TreeNode {
+struct treeNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    treeNode *left;
+    treeNode *right;
+    treeNode() : val(0), left(nullptr), right(nullptr) {}
+    treeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    treeNode(int x, treeNode *left, treeNode *right) : val(x), left(left), right(right) {}
 };
 
 using namespace std;
 
 class Solution {
 public:
-    vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
+    vector<vector<int>> pathSum(treeNode* root, int targetSum) {
         vector<int> curr;
         vector<vector<int>> ret;
         int sum = 0;
@@ -32,7 +32,7 @@ public:
 
 private:
     int target;
-    void dfs(vector<int> &curr, vector<vector<int>> &ret, int &sum, TreeNode* node) {
+    void dfs(vector<int> &curr, vector<vector<int>> &ret, int &sum, treeNode* node) {
         curr.push_back(node->val);
         sum += node->val;
         if (node->left)

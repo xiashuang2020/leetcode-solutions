@@ -2,16 +2,16 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-struct TreeNode {
+struct treeNode {
     int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct treeNode *left;
+    struct treeNode *right;
 };
 
 /* inorder遍历应该从大到小 */
 
-bool isValidBST(struct TreeNode* root) {
-    struct TreeNode *curr = NULL, *rm = NULL, *lm = NULL;
+bool isValidBST(struct treeNode* root) {
+    struct treeNode *curr = NULL, *rm = NULL, *lm = NULL;
     long prev = (1L << 33) * -1;
 
     if (root == NULL) {
@@ -48,9 +48,9 @@ bool isValidBST(struct TreeNode* root) {
     return true;
 }
 
-struct TreeNode node3 = {3, NULL, NULL};
-struct TreeNode node2 = {1, &node3, NULL};
-struct TreeNode node1 = {1, NULL, &node2};
+struct treeNode node3 = {3, NULL, NULL};
+struct treeNode node2 = {1, &node3, NULL};
+struct treeNode node1 = {1, NULL, &node2};
 
 int main(void)
 {

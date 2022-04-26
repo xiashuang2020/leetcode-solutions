@@ -4,10 +4,10 @@
 
 
 
-struct TreeNode {
+struct treeNode {
     int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct treeNode *left;
+    struct treeNode *right;
 };
 
 #include <stdio.h>
@@ -16,8 +16,8 @@ struct TreeNode {
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
-int *preorderTraversal(struct TreeNode *root, int *returnSize) {
-    struct TreeNode *rm = NULL, *curr = NULL;
+int *preorderTraversal(struct treeNode *root, int *returnSize) {
+    struct treeNode *rm = NULL, *curr = NULL;
     int *ret = 0, r_size = 0;
 
     ret = malloc(100 * sizeof(int));
@@ -57,9 +57,9 @@ int *preorderTraversal(struct TreeNode *root, int *returnSize) {
     return ret;
 }
 
-struct TreeNode node3 = {3, NULL, NULL};
-struct TreeNode node2 = {2, &node3, NULL};
-struct TreeNode node1 = {1, NULL, &node2};
+struct treeNode node3 = {3, NULL, NULL};
+struct treeNode node2 = {2, &node3, NULL};
+struct treeNode node1 = {1, NULL, &node2};
 
 int main(void)
 {

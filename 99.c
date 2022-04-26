@@ -4,22 +4,22 @@
 
 /**
  * Definition for a binary tree node.
- * struct TreeNode {
+ * struct treeNode {
  *     int val;
- *     struct TreeNode *left;
- *     struct TreeNode *right;
+ *     struct treeNode *left;
+ *     struct treeNode *right;
  * };
  */
 
 #include <stdio.h>
 
-struct TreeNode {
+struct treeNode {
     int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct treeNode *left;
+    struct treeNode *right;
 };
 
-static inline void traverse(struct TreeNode **prev, struct TreeNode *curr, struct TreeNode **first, struct TreeNode **second) {
+static inline void traverse(struct treeNode **prev, struct treeNode *curr, struct treeNode **first, struct treeNode **second) {
     if (*prev != NULL && (*prev)->val > curr->val) {
         if (*first == NULL) {
             *first = *prev;
@@ -33,14 +33,14 @@ static inline void traverse(struct TreeNode **prev, struct TreeNode *curr, struc
 }
 
 
-void recoverTree(struct TreeNode* root) {
-    struct TreeNode *prev = NULL, *first = NULL, *second = NULL;
-    struct TreeNode *curr = root;
+void recoverTree(struct treeNode* root) {
+    struct treeNode *prev = NULL, *first = NULL, *second = NULL;
+    struct treeNode *curr = root;
 
     loop:
     while (curr) {
         if (curr->left) {
-            struct TreeNode *left_rmost = curr->left;
+            struct treeNode *left_rmost = curr->left;
             while (left_rmost->right) {
                 if (left_rmost->right != curr)
                 {
@@ -67,10 +67,10 @@ void recoverTree(struct TreeNode* root) {
     return;
 }
 
-struct TreeNode node1 = {1, NULL, NULL};
-struct TreeNode node3 = {2, NULL, NULL};
-struct TreeNode node2 = {4, &node3, NULL};
-struct TreeNode root = {3, &node1, &node2};
+struct treeNode node1 = {1, NULL, NULL};
+struct treeNode node3 = {2, NULL, NULL};
+struct treeNode node2 = {4, &node3, NULL};
+struct treeNode root = {3, &node1, &node2};
 
 int main(void)
 {

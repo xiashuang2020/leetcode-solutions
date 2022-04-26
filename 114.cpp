@@ -2,21 +2,21 @@
 // Created by pyxisha on 2021/9/5.
 //
 
-struct TreeNode {
+struct treeNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    treeNode *left;
+    treeNode *right;
+    treeNode() : val(0), left(nullptr), right(nullptr) {}
+    treeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    treeNode(int x, treeNode *left, treeNode *right) : val(x), left(left), right(right) {}
 };
 
 
 class Solution {
 
 public:
-    void flatten(TreeNode* root) {
-        TreeNode *curr = root;
+    void flatten(treeNode* root) {
+        treeNode *curr = root;
 
         if (root == nullptr)
             return;
@@ -25,8 +25,8 @@ public:
             if (!curr->left) {
                 curr = curr->right;
             } else {
-                TreeNode *left = curr->left;
-                TreeNode *right_most = curr->left;
+                treeNode *left = curr->left;
+                treeNode *right_most = curr->left;
 
                 while (right_most->right) {
                     right_most = right_most->right;
@@ -45,12 +45,12 @@ public:
 
 int main(void)
 {
-    TreeNode node3(3);
-    TreeNode node4(4);
-    TreeNode node6(6);
-    TreeNode node2(2, &node3, &node4);
-    TreeNode node5(5, nullptr, &node6);
-    TreeNode node1(1, &node2, &node5);
+    treeNode node3(3);
+    treeNode node4(4);
+    treeNode node6(6);
+    treeNode node2(2, &node3, &node4);
+    treeNode node5(5, nullptr, &node6);
+    treeNode node1(1, &node2, &node5);
 
     class Solution x;
 

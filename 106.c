@@ -4,19 +4,19 @@
 
 #include <stdio.h>
 
-struct TreeNode {
+struct treeNode {
     int val;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct treeNode *left;
+    struct treeNode *right;
 };
 
 /* 分而治之 */
 
-struct TreeNode nodes[3000];
+struct treeNode nodes[3000];
 int nodeIdx = 0;
 
-struct TreeNode* buildTree_r(int* inorder, int inorderSize, int* postorder, int postorderSize) {
-    struct TreeNode* root;
+struct treeNode* buildTree_r(int* inorder, int inorderSize, int* postorder, int postorderSize) {
+    struct treeNode* root;
     int root_val;
     int i;
 
@@ -38,7 +38,7 @@ struct TreeNode* buildTree_r(int* inorder, int inorderSize, int* postorder, int 
     return root;
 }
 
-struct TreeNode* buildTree(int* inorder, int inorderSize, int* postorder, int postorderSize) {
+struct treeNode* buildTree(int* inorder, int inorderSize, int* postorder, int postorderSize) {
     nodeIdx = 0;
     return buildTree_r(inorder, inorderSize, postorder, postorderSize);
 }

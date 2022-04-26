@@ -9,20 +9,20 @@
 
 using namespace std;
 
-struct TreeNode {
+struct treeNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    treeNode *left;
+    treeNode *right;
+    treeNode() : val(0), left(nullptr), right(nullptr) {}
+    treeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    treeNode(int x, treeNode *left, treeNode *right) : val(x), left(left), right(right) {}
 };
 
 class Solution {
 public:
-    vector<vector<int>> levelOrderBottom(TreeNode* root) {
-        auto *curr = new queue<TreeNode*>;
-        auto *next = new queue<TreeNode*>;
+    vector<vector<int>> levelOrderBottom(treeNode* root) {
+        auto *curr = new queue<treeNode*>;
+        auto *next = new queue<treeNode*>;
         vector<vector<int>> ret;
         vector<int> curr_ret;
 
@@ -32,7 +32,7 @@ public:
         curr->push(root);
 
         while (!curr->empty()) {
-            TreeNode *node = curr->front();
+            treeNode *node = curr->front();
             curr->pop();
 
             curr_ret.push_back(node->val);

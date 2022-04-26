@@ -9,16 +9,16 @@
 
 using namespace std;
 
-struct TreeNode {
+struct treeNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    treeNode *left;
+    treeNode *right;
+    treeNode() : val(0), left(nullptr), right(nullptr) {}
+    treeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    treeNode(int x, treeNode *left, treeNode *right) : val(x), left(left), right(right) {}
 };
 
-static void recursive(vector<int> &ret, TreeNode* node)
+static void recursive(vector<int> &ret, treeNode* node)
 {
     if (node->left)
         recursive(ret, node->left);
@@ -29,7 +29,7 @@ static void recursive(vector<int> &ret, TreeNode* node)
 
 class Solution {
 public:
-    vector<int> postorderTraversal(TreeNode* root) {
+    vector<int> postorderTraversal(treeNode* root) {
         vector<int> ret;
 
         if (root == nullptr)

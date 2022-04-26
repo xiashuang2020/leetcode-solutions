@@ -13,16 +13,16 @@
 
 using namespace std;
 
-struct TreeNode {
+struct treeNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    treeNode *left;
+    treeNode *right;
+    treeNode() : val(0), left(nullptr), right(nullptr) {}
+    treeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    treeNode(int x, treeNode *left, treeNode *right) : val(x), left(left), right(right) {}
 };
 
-bool isBalancedR(TreeNode* root, int *height)
+bool isBalancedR(treeNode* root, int *height)
 {
     int height_l;
     int height_r;
@@ -49,7 +49,7 @@ bool isBalancedR(TreeNode* root, int *height)
 
 class Solution {
 public:
-    bool isBalanced(TreeNode* root) {
+    bool isBalanced(treeNode* root) {
         int height;
         if (!root)
             return true;
