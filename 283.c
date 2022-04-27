@@ -2,11 +2,11 @@
 // Created by xiash on 2022/4/26.
 //
 
-void moveZeros(int *nums, int numSize)
+void moveZeroes(int *nums, int numSize)
 {
     int i = 0, j = 0;
 
-    while (nums[i] != 0)
+    while (i < numSize && nums[i] != 0)
         i++;
     j = i + 1;
     while (j < numSize) {
