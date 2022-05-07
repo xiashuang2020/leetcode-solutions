@@ -8,11 +8,18 @@
 
 using namespace std;
 
+#include <stdlib.h>
+#include <string.h>
+
 class Solution {
 public:
     int coinChange(vector<int>& coins, int amount) {
+        if (amount == 0)
+            return 0;
+
         int *dp = new int[amount + 1];
-        int n = 0;
+        memset(dp, 0, sizeof(int) * (amount + 1));
+        int n = 1;
         queue<int> Q;
         queue<int> nextQ;
 
@@ -21,9 +28,9 @@ public:
             while (!Q.empty()) {
                 int p = Q.front();
                 Q.pop();
-                dp[p] = n;
                 for (int i : coins) {
-                    if (i + p <= amount && dp[i + p] == 0) {
+                    if (i <= amount - p && dp[i + p] == 0) {
+                        dp[i + p] = n;
                         nextQ.push(i + p);
                     }
                 }
@@ -32,7 +39,9 @@ public:
             swap(Q, nextQ);
         }
 
-        return dp[amount] == 0 ? -1 : dp[amount];
+        int ret = dp[amount] == 0 ? -1 : dp[amount];
+        delete[] dp;
+        return ret;
     }
 };
 
@@ -40,6 +49,10 @@ int main(void)
 {
     Solution solution;
     vector<int> test = {3, 5};
+    vector<int> test2 = {1, 2, 5};
+    vector<int> test3 = {1, 2};
 
     cout << solution.coinChange(test, 11) << endl;
+    cout << solution.coinChange(test2, 11) << endl;
+    cout << solution.coinChange(test3, 3) << endl;
 }
