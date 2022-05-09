@@ -29,9 +29,9 @@ void gameOfLife(int** board, int boardSize, int* boardColSize){
 
             if (board[i][j] & 0x1 && live_sib_cnt >= 2 && live_sib_cnt <= 3)
             {
-                board[i][j] = 0x11;
+                board[i][j] = 3;
             } else if (!(board[i][j] & 0x1) && live_sib_cnt == 3) {
-                board[i][j] = 0x10;
+                board[i][j] = 2;
             }
         }
     }
