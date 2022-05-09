@@ -10,7 +10,7 @@ bool increasingTriplet(int *nums, int numsSize)
     int i = 0, j = 1, k = 2;
 
     while (k < numsSize) {
-        if (nums[j + 1] <= nums[i]) {
+        if (nums[j] <= nums[i]) {
             i++;
             j++;
             k++;
@@ -18,7 +18,7 @@ bool increasingTriplet(int *nums, int numsSize)
         }
         if (nums[k] > nums[j]) {
             return true;
-        } else if (nums[k] > nums[j]) {
+        } else if (nums[k] > nums[i]) {
             j = k;
             k++;
             continue;
@@ -34,7 +34,8 @@ bool increasingTriplet(int *nums, int numsSize)
             } else {
                 i = k;
                 j = t;
-                k++;
+                k = j + 1;
+                //printf("%d %d %d\n", i, j, k);
                 continue;
             }
         }
@@ -48,9 +49,10 @@ int main(void)
 {
     int test1[5] = {5, 4, 3, 2 ,1};
     int test2[5] = {5, 6, 1, 2, 3};
-    int test3[7] = {5, 6, 1, 2, 1, 2, 5};
+    int test4[6] = {1, 5, 0, 4, 1, 3};
+
     printf("%d\n", increasingTriplet(test1, 5));
     printf("%d\n", increasingTriplet(test2, 5));
     printf("%d\n", increasingTriplet(test2, 4));
-    printf("%d\n", increasingTriplet(test3, 7));
+    printf("%d\n", increasingTriplet(test4, 6));
 }
